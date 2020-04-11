@@ -32,14 +32,10 @@ class revIPLookup:
 |_| |____/ \_/ |_|_|   |_____\___/ \___/|_|\_\\\__,_| .__/ 
                                                    |_|
 ############################################################
-    [+] Author : 1uffyD9 Moded by H0oligan
-    [+] Github : https://github.com/H0oligan
-
+    [+] Author : 1uffyD9
+    [+] Github : https://github.com/1uffyD9
 ############################################################
 '''
- #  Added Store result into file and keep scanning when 
- #  connectivity problem useful when changing ip to
- #  bypass membership limitation on hackertarget api
 
     def __init__(self,):
         try:
