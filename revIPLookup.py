@@ -99,8 +99,9 @@ class revIPLookup:
                 for i in re.split('\n', req.text):
                     if ip not in i and i.strip():
                         print ('\t' + self.success + i + self.reset)
+                        fo = open("domains.txt", "a")
+                        fo.write(i + '\n')
         except requests.exceptions.RequestException as e:
-            sys.exit(self.error + "Something going wrong with the connection.Please check the connectivity" + self.reset)
+            print(self.error + "Something going wrong with the connection.Please check the connectivity" + self.reset)
 
 revIPLookup()
-
