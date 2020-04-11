@@ -32,10 +32,14 @@ class revIPLookup:
 |_| |____/ \_/ |_|_|   |_____\___/ \___/|_|\_\\\__,_| .__/ 
                                                    |_|
 ############################################################
-    [+] Author : 1uffyD9
-    [+] Github : https://github.com/1uffyD9
+    [+] Author : 1uffyD9 Moded by H0oligan
+    [+] Github : https://github.com/H0oligan
+
 ############################################################
 '''
+ #  Added Store result into file and keep scanning when 
+ #  connectivity problem useful when changing ip to
+ #  bypass membership limitation on hackertarget api
 
     def __init__(self,):
         try:
@@ -99,8 +103,9 @@ class revIPLookup:
                 for i in re.split('\n', req.text):
                     if ip not in i and i.strip():
                         print ('\t' + self.success + i + self.reset)
+                        fo = open("domains.txt", "a")
+                        fo.write(i + '\n')
         except requests.exceptions.RequestException as e:
-            sys.exit(self.error + "Something going wrong with the connection.Please check the connectivity" + self.reset)
+            print(self.error + "Something going wrong with the connection.Please check the connectivity" + self.reset)
 
 revIPLookup()
-
